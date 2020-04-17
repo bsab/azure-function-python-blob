@@ -1,0 +1,23 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "myblob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "upload-images/{name}",
+      "connection": "MyStorageConnectionString"
+    },
+    {
+      "direction": "out",
+      "type": "cosmosDB",
+      "name": "doc",
+      "databaseName": "testdb",
+      "collectionName": "testcol01",
+      "leaseCollectionName": "leases",
+      "createLeaseCollectionIfNotExists": true,
+      "connectionStringSetting": "MyCosmosDBConnectionString",
+      "createIfNotExists": true
+    }
+  ]
+}
